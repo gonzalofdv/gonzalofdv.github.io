@@ -41,6 +41,31 @@
 			y : posy
 		}
 	}
+
+	// Obtener la fecha actual
+	let today = new Date();
+	let currentDay = today.getDate();
+
+	// Cuenta atrás
+	let targetDate = new Date(today.getFullYear(), today.getMonth(), currentDay + 1);
+	let countdownElement = document.getElementById('countdown');
+	let countdown = setInterval(() => {
+		let now = new Date();
+		let diff = targetDate - now;
+
+		let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+		let seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+		countdownElement.innerHTML = `Próximo desbloqueo en: ${hours}h ${minutes}m ${seconds}s`;
+
+		// Si el contador llega a 0, reiniciar para el próximo día
+		if (diff < 0) {
+			clearInterval(countdown);
+			countdownElement.innerHTML = "¡El siguiente cubo está desbloqueado!";
+		}
+	}, 1000);
+
 	// Detect mobile. From: http://stackoverflow.com/a/11381730/989439
 	function mobilecheck() {
 		var check = false;

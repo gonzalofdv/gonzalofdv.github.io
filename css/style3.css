@@ -13,6 +13,12 @@ a:focus {
 	color: #fceeb8;
 }
 
+#countdown {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ff6347;
+}
+
 .codrops-header {
 	background: none;
 }
