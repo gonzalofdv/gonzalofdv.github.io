@@ -29,7 +29,9 @@ function showSurprise(day) {
         2: "<img src='https://tuweb.com/foto.jpg' alt='Una foto especial' />",
         3: "<a href='https://cancion-especial.com'>Esta canción me recuerda a ti</a>",
         4: "Vale por una cena romántica este fin de semana.",
-        5: "Pista: Busca en el lugar donde nos conocimos por primera vez."
+        5: "Pista: Busca en el lugar donde nos conocimos por primera vez.",
+        22: "Este dia lo puedes desbloquear",
+        23: "hasta que no sea 23 no podrás ver"
         // Añadir más sorpresas hasta el día 25
     };
 
