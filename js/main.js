@@ -42,6 +42,27 @@
 		}
 	}
 
+	document.addEventListener('DOMContentLoaded', () => {
+		// Obtener la fecha actual
+		const today = new Date();
+		const currentDay = today.getDate(); // Esto devuelve el número del día (1-31)
+		
+		// Seleccionar todos los cubos del calendario
+		const cubes = document.querySelectorAll('.cube');
+		
+		// Recorremos cada cubo y aplicamos bloqueo si es necesario
+		cubes.forEach((cube, index) => {
+			const dayNumber = index + 1; // Los días van del 1 al 25 en el calendario
+			
+			if (dayNumber > currentDay) {
+				// Agregar una clase para bloquear cubos del futuro
+				cube.classList.add('locked');
+				cube.style.pointerEvents = 'none'; // Desactivar clics en el cubo bloqueado
+				cube.style.opacity = '0.5'; // Cambiar la opacidad para indicar que está bloqueado
+			}
+		});
+	});
+
 	// Obtener la fecha actual
 	let today = new Date();
 	let currentDay = today.getDate();
