@@ -105,7 +105,7 @@ a:focus {
 }*/
 
 /* El contenedor que revelará la información */
-.js .content__block {
+.js .content {
     max-height: 400px; /* Ajusta el tamaño máximo según lo que necesites */
     overflow-y: auto;  /* Habilita el scroll vertical */
     padding: 10px;
@@ -114,17 +114,17 @@ a:focus {
 }
 
 /* Para mejorar la apariencia del scroll en diferentes navegadores */
-.js .content__block::-webkit-scrollbar {
+.js .content::-webkit-scrollbar {
     width: 8px;
     background-color: #f1f1f1;
 }
 
-.js .content__block::-webkit-scrollbar-thumb {
+.js .content::-webkit-scrollbar-thumb {
     background-color: #888;
     border-radius: 4px;
 }
 
-.js .content__block::-webkit-scrollbar-thumb:hover {
+.js .content::-webkit-scrollbar-thumb:hover {
     background-color: #555;
 }
 
