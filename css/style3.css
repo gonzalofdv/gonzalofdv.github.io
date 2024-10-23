@@ -106,7 +106,7 @@ a:focus {
 
 /* El contenedor que revelará la información */
 .js .content {
-    max-height: 400px; /* Ajusta el tamaño máximo según lo que necesites */
+    /*max-height: 800px;*/ /* Ajusta el tamaño máximo según lo que necesites */
     overflow-y: auto;  /* Habilita el scroll vertical */
     padding: 10px;
 }
