@@ -104,6 +104,13 @@ a:focus {
 	padding: 0 5vw 0 20vw;
 }*/
 
+.js .content__block img {
+	max-width: 60%;
+	height: auto;
+	margin: 0 auto;
+	padding: 0 5vw 0 20vw;
+}
+
 /* El contenedor que revelará la información */
 .js .content {
     /*max-height: 800px;*/ /* Ajusta el tamaño máximo según lo que necesites */
