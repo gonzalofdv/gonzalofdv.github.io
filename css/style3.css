@@ -104,6 +104,11 @@ a:focus {
 	padding: 0 5vw 0 20vw;
 }*/
 
+/* Ajustes generales para la responsividad */
+* {
+    box-sizing: border-box; /* Asegura que padding y border no desborden el tamaño del contenedor */
+}
+
 .js .content__block img {
 	max-width: 100%;
 	height: auto;
