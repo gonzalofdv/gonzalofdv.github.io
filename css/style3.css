@@ -99,9 +99,18 @@ a:focus {
 	color: #cac9c9;
 }
 
-.js .content__block {
+/*.js .content__block {
 	width: 100%;
 	padding: 0 5vw 0 20vw;
+}*/
+
+/* El contenedor que revelará la información */
+.js .content__block {
+    max-height: 400px; /* Ajusta el tamaño máximo según lo que necesites */
+    overflow-y: auto;  /* Habilita el scroll vertical */
+    padding: 10px;
+    border: 1px solid #ccc; /* Opcional: para darle un borde */
+    background-color: #fff; /* Opcional: cambiar el fondo si lo necesitas */
 }
 
 /* Para mejorar la apariencia del scroll en diferentes navegadores */
