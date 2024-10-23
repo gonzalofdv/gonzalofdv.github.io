@@ -11,10 +11,22 @@ cubes.forEach(cube => {
 
     // Si el día del cubo es menor o igual al día actual, desbloquéalo
     if (day <= currentDay) {
-        cube.classList.add('unlocked');
+        cube.classList.remove('cube--inactive');
+
+        // Añadimos un listener de clic para animar el cubo
         cube.addEventListener('click', () => {
-            showSurprise(day);
+            // Animación del cubo al hacer clic
+            anime({
+                targets: cube,
+                rotateY: [0, 360], // Rotación en Y
+                duration: 1000,
+                easing: 'easeInOutQuad'
+            });
+
+            showSurprise(day); // Mostrar la sorpresa después de la animación
         });
+    } else {
+        cube.classList.add('cube--inactive');
     }
 });
 
@@ -54,12 +66,50 @@ function showSurprise(day) {
     };
 
     surpriseContent.innerHTML = surprises[day];
+
+    // Aplicar Charming.js para dividir el texto
+    charming(surpriseContent);
+
+    // Inicializar y aplicar efectos con Textfx.js
+    let fx = new TextFx(surpriseContent);
+    fx.animate({
+        effect: 'wave', // Otras opciones: 'glitch', 'fadeIn', 'slide'
+        duration: 1200,
+        stagger: 50
+    });
+
     modal.style.display = "flex";
+
+    // Aplicar animación con anime.js después de dividir el texto
+    anime({
+        targets: '#surpriseContent span',
+        opacity: [0, 1],
+        translateY: [-50, 0],
+        easing: 'easeOutExpo',
+        duration: 800,
+        delay: (el, i) => 30 * i // Demora progresiva para cada letra
+    });
 }
 
 // Cerrar el modal
+//document.querySelector('.close').addEventListener('click', () => {
+//    document.getElementById('contentModal').style.display = 'none';
+//});
+
 document.querySelector('.close').addEventListener('click', () => {
-    document.getElementById('contentModal').style.display = 'none';
+    let modal = document.getElementById('contentModal');
+    
+    // Animación de salida con anime.js
+    anime({
+        targets: modal,
+        opacity: [1, 0],
+        translateY: [0, -100],
+        easing: 'easeInOutQuad',
+        duration: 500,
+        complete: function() {
+            modal.style.display = 'none'; // Ocultar modal después de la animación
+        }
+    });
 });
 
 // Cuenta atrás
