@@ -39,6 +39,12 @@ a:focus {
 	perspective: 2500px;
 }
 
+/* Estilo para cubos bloqueados */
+.cube.locked {
+    background-color: #ccc; /* Cambiar el color de fondo para los cubos bloqueados */
+    cursor: not-allowed;
+}
+
 .cube__side,
 .no-js .cube {
 	border: 3px solid #fff;
