@@ -41,6 +41,9 @@
 			y : posy
 		}
 	}
+/* ######################################################################
+		FUNCIÓN PARA BLOQUEAR LOS CUBOS SEGÚN EL DÍA DEL MES QUE SEA
+#########################################################################
 
 	document.addEventListener('DOMContentLoaded', () => {
 		// Obtener la fecha actual
@@ -62,7 +65,7 @@
 			}
 		});
 	});
-
+*/
 	// Obtener la fecha actual
 	let today = new Date();
 	let currentDay = today.getDate();
